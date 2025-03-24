@@ -186,6 +186,9 @@ try {
             <a href="accueil_admin.php">Accueil</a>
             <a href="deconnexion.php">Déconnexion</a>
         </div>
+        <div class="navbar-user">
+            Connecté en tant que : <?php echo htmlspecialchars($_SESSION['role']); ?>
+        </div>
     </div>
 
     <div class="content">

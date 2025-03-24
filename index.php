@@ -31,15 +31,15 @@ session_destroy();
         }
 
         .navbar-logo {  
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: row-reverse;
-            align-items: center;
-            flex-grow: 2;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 2;
+    }
 
         .navbar-logo img {
             height: 50px;
+            
         }
 
         .navbar-buttons {

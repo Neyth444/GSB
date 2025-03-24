@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -11,13 +10,34 @@ session_start();
     <title>Formulaire de connexion</title>
     <style>
         body {
-            background-color: #f0f8ff; /* Bleu clair */
+            background-color: #f0f8ff; 
             font-family: Arial, sans-serif;
             margin: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Pour empiler navbar et contenu */
             align-items: center;
             height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff; 
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            height: 50px;
         }
 
         .form-container {
@@ -27,15 +47,16 @@ session_start();
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            margin-top: 50px;
         }
 
         h2 {
-            color: #007bff; /* Bleu foncé */
+            color: #007bff;
             margin-bottom: 20px;
         }
 
         img {
-            width: 100px; /* Ajustez la taille de l'image */
+            width: 70px;
             margin-bottom: 20px;
         }
 
@@ -45,7 +66,7 @@ session_start();
             font-weight: bold;
         }
 
-        input[type="text"], input[type="password"], input[type="email"] {
+        input[type="text"], input[type="password"] {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
@@ -53,7 +74,7 @@ session_start();
             border-radius: 5px;
         }
 
-        input[type="submit"], input[type="reset"] {
+        button {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -64,24 +85,29 @@ session_start();
             color: white;
         }
 
-        input[type="submit"]:hover, input[type="reset"]:hover {
+        button:hover {
             background-color: #005cbf;
         }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="img/gsb.png" alt="Logo GSB">
+        </div>
+    </div>
+
     <div class="form-container">
-        <img src="img/gsb.png" alt="Logo GSB">
         <h2>Connexion</h2>
-    <form action="process_form_login.php" method="POST">
-        <label for="login">Login :</label>
-        <input type="text" id="login" name="login" required>
+        <form action="process_form_login.php" method="POST">
+            <label for="login">Login :</label>
+            <input type="text" id="login" name="login" required>
 
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
 
-        <button type="submit">Se connecter</button>
-    </form>
+            <button type="submit">Se connecter</button>
+        </form>
     </div>
 </body>
 </html>
